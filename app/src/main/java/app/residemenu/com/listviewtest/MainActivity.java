@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements OnDataListner{
 
     @Override
     public void getData(int pos,String name, boolean isSelected) {
-
+        if (isSelected){
+            Log.e("NAME",pos+""+name);
+        }
     }
 }
