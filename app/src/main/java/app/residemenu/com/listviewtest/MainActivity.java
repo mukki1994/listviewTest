@@ -22,22 +22,16 @@ public class MainActivity extends AppCompatActivity implements OnDataListner{
     private ListAdapter mListAdapter;
     private DividerItemDecoration dividerItemDecoration;
     private List<Data> mList;
-    private List<Info> mInfo;
-    //private List mUser = new ArrayList();
     private TextView mTxtOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRecyclerList = findViewById(R.id.recylcler_list);
-        mTxtOutput = findViewById(R.id.text_output);
-        mList = new ArrayList<>();
-        mInfo = new ArrayList<>();
+        init();
 
         mList.add(new Data("Ram",false));
         mList.add(new Data("Shyam",false));
-
         mList.add(new Data("Suresh",false));
         mList.add(new Data("Mohan",false));
         mList.add(new Data("Sohan",false));
@@ -55,52 +49,14 @@ public class MainActivity extends AppCompatActivity implements OnDataListner{
 
     }
 
-    @SuppressLint("SetTextI18n")
+    private void init(){
+        mRecyclerList = findViewById(R.id.recylcler_list);
+        mTxtOutput = findViewById(R.id.text_output);
+        mList = new ArrayList<>();
+    }
+
     @Override
     public void getData(int pos,String name, boolean isSelected) {
-
-        /*if (isSelected){
-            for (int i = 0;i<mList.size();i++){
-                String selectedNames[] = {mList.get(i).name};
-
-                mInfo.add(new Info(Arrays.toString(selectedNames)));
-
-                Log.d("names", "names checked: " + mInfo.get(i).getName()+" ,");
-                mTxtOutput.setText(mInfo.get(i).getName() );
-                *//*mInfo.get(pos).setName(name);
-                mUser.add(mInfo);
-                 Log.d("names", "names checked: " + mUser+" ,");*//*
-               // Log.d("names", "names checked: " + selectedNames[i]+" ,");
-               // mTxtOutput.setText(Arrays.toString(selectedNames) +",");
-            }
-
-            *//*for (int j =0;i<mInfo.size();j++){
-                Iterator itr = mInfo.iterator();
-                while (itr.hasNext()){
-                    Log.d("names", "names checked: " + mInfo.get(j).getName()+" ,");
-
-                }
-            }*//*
-
-        }else {
-            mListAdapter.notifyDataSetChanged();
-        }*/
-
-       /* if (isSelected){
-            for(int j = 0;j<mList.size();j++){
-                mInfo.add(new Info(""+name));
-            }
-            *//*for(int i = 0;i<mInfo.size();i++){
-                Log.e("NAME",mInfo.get(i).getName());
-            }*//*
-            Iterator itr = mInfo.iterator();
-            while (itr.hasNext()){
-                Log.e("NAME",mInfo.get(pos).getName());
-            }
-        }*/
-        if (isSelected){
-            String selectedNames[] = mList.get(pos).getName();
-        }
 
     }
 }
